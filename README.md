@@ -1,4 +1,11 @@
 # 🚀 User Activity Analytics: The Bitmasking Approach
+# 🚀 Getting Started
+
+## Prerequisites
+
+- Snowflake Account
+- dbt Core or dbt Cloud
+- Raw event data loaded into
 
 ## 📌 Project Overview
 This project implements an optimized data pipeline to track user activity and calculate:
@@ -118,10 +125,4 @@ This approach avoids expensive rolling window scans.
 
 ---
 
-# 🚀 Getting Started
 
-## Prerequisites
-
-- Snowflake Account
-- dbt Core or dbt Cloud
-- Raw event data loaded into
