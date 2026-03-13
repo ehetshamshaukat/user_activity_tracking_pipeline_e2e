@@ -114,6 +114,8 @@ Using bitwise operators allows retention calculations in **O(1) time complexity*
 
 This approach avoids expensive rolling window scans.
 
+![dau-wau-mau-2026-03-13T16-56-11 818Z](https://github.com/user-attachments/assets/0efd401e-5666-46be-88fb-a6db3707e645)
+
 ---
 
 # 🚀 Getting Started
