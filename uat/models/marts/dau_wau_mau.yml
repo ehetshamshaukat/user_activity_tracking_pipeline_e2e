@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dau_wau_mau
+    config:
+      schema: int_to_bit
+      materialized: incremental
+      incremental_strategy: merge 
+      unique_key: user_id
+      on_schema_change: sync_all_columns

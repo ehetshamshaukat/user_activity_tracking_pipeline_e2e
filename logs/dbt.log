@@ -1,0 +1,39 @@
+==================== 2026-03-04T16:59:49.914342Z | 019cb9ca-9f03-7db3-bf01-2546cec6f21a ====================
+16:59:49.914698 [info ]: Installing dbt project and profile setup
+16:59:49.919987 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+16:59:49.920183 [info ]: Success Project created successfully!
+16:59:49.920209 [info ]: Info Project name: uat
+16:59:49.920229 [info ]: Info Project directory: uat
+16:59:49.920304 [info ]: Info Setting up your profile...
+16:59:49.925401 [info ]: Loading ~/.dbt/profiles.yml
+16:59:49.929766 [info ]: Info Creating new profile...
+17:00:19.890259 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+17:01:29.927840 [info ]: Success Profile written to /Users/ehetsham/.dbt/profiles.yml
+17:01:29.928140 [info ]: Validating profile inputs, adapters, and connection
+
+17:01:29.928568 [info ]: dbt-fusion 2.0.0-preview.114
+17:01:29.930049 [info ]: Started loading project
+17:01:29.938462 [info ]: Loading ~/.dbt/profiles.yml
+17:01:29.942035 [info ]: Finished loading project [  0.01s]
+17:01:29.942374 [info ]: Started debugging
+17:01:29.942462 [info ]: Debugging profile: dev
+17:01:29.942499 [info ]: Debugging dbt version: 2.0.0-preview.114
+17:01:29.942513 [info ]: Debugging platform: macos aarch64 (unix)
+17:01:29.942574 [info ]: Debugging adapter type: snowflake (remote)
+17:01:29.969740 [info ]: Debugging dependencies:
+  git: OK
+17:01:29.970431 [info ]: Debugging connection:
+  "account": "adyxmxc-bx76875",
+  "user": "emmanoah3210",
+  "database": "USER_ACTIVITY_TRACKING",
+  "warehouse": "medium_wh",
+  "schema": "raw"
+17:01:34.911244 [debug]: Query executed on node unknown:
+select 1 as id
+17:01:35.029526 [info ]: Debugging connection test: OK
+17:01:35.031453 [info ]: Debugged All checks passed!
+17:01:35.031631 [info ]: Finished debugging [  5.09s]
+17:01:38.033968 [info ]: New version available 2.0.0-preview.144 (run `dbt system update`)
+17:01:38.230690 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' successfully for target 'dev' [1m 48s]

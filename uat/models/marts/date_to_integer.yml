@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: date_to_integer
+    config:
+      schema: date_to_integer
+      materialized: incremental 
+      incremental_strategy: merge
+      unique_key: user_id

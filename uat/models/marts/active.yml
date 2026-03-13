@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: active
+    config:
+      schema: num_of_dau_wau_mau
+      materialized: incremental
+      incremental_strategy: merge 
+      unique_key: date
+      on_schema_change: syn_all_columns
