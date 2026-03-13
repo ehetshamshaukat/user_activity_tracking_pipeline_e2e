@@ -1,11 +1,10 @@
-# 🚀 User Activity Analytics: The Bitmasking Approach
-# 🚀 Getting Started
+# 🚀 Getting Started: User Activity Analytics: The Bitmasking Approach
 
 ## Prerequisites
 
 - Snowflake Account
 - dbt Core or dbt Cloud
-- Raw event data loaded into
+- Raw event data loaded into snowflake 
 
 ## 📌 Project Overview
 This project implements an optimized data pipeline to track user activity and calculate:
@@ -17,6 +16,16 @@ This project implements an optimized data pipeline to track user activity and ca
 Instead of performing expensive `DISTINCT` counts over massive rolling windows, this project leverages **Bitmasking**.
 
 By representing user activity as a **32-bit integer**, we can determine retention status across any time grain using simple **bitwise arithmetic**, significantly reducing **compute cost** and **query time**.
+
+## 💻 Logic Deep Dive: Bitwise Magic
+
+Using bitwise operators allows retention calculations in **O(1) time complexity**.
+
+| Metric | Logic | Bitwise Check |
+|------|------|------|
+| **DAU** | Active in last 24 hours | `BITAND(sum_val, 2147483648) > 0` |
+| **WAU** | Active in last 7 days | `BITAND(sum_val, 4261412864) > 0` |
+| **MAU** | Active in last 31 days | `SUM(bit_value) > 0` |
 
 ---
 
@@ -109,17 +118,10 @@ The output provides a clean **time-series dataset** ready for analytics dashboar
 
 ---
 
-# 💻 Logic Deep Dive: Bitwise Magic
-
-Using bitwise operators allows retention calculations in **O(1) time complexity**.
-
-| Metric | Logic | Bitwise Check |
-|------|------|------|
-| **DAU** | Active in last 24 hours | `BITAND(sum_val, 2147483648) > 0` |
-| **WAU** | Active in last 7 days | `BITAND(sum_val, 4261412864) > 0` |
-| **MAU** | Active in last 31 days | `SUM(bit_value) > 0` |
 
 This approach avoids expensive rolling window scans.
+
+## 5️⃣  BI Output
 
 ![dau-wau-mau-2026-03-13T16-56-11 818Z](https://github.com/user-attachments/assets/0efd401e-5666-46be-88fb-a6db3707e645)
 
